@@ -374,32 +374,19 @@ a{
   transition: background-color 0.3s ease-in-out; /* Add a smooth transition */
 }
 
-/* ... (remaining styles) */
-.btn-outline-primary.animated-button {
-  /* background-color: #007bff; 
-  color: #ffffff; 
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;*/ 
-} 
-
-/* CarouselComponent.css */
-
-/* Add your custom styles here */
-
-/* Example: Styling for the carousel captions */
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   color: #ffffff; /* White text color */
   padding: 20px;
 }
 
-/* Example: Add additional styles for the carousel images */
+
 .carousel-item img {
-  border-radius: 10px; /* Rounded corners for the images */
-  object-fit: cover; /* Ensure the images cover the entire carousel item */
-  height: 400px; /* Adjust the height of the carousel images */
+  border-radius: 10px; 
+  object-fit: cover; 
+  height: 400px; 
 }
 
-/* Example: Styling for the carousel controls (optional) */
 .carousel-control-prev,
 .carousel-control-next {
   font-size: 2rem;
@@ -418,9 +405,7 @@ a{
   background-color: #000000;
 }
 
-/* CarouselComponent.css */
 
-/* ... (previous styles) */
 
 /* Example: Animation for bold text */
 @keyframes fadeInBold {
@@ -442,8 +427,7 @@ a{
   animation: fadeInBold 1s ease-in-out;
 }
 
-/* ... (remaining styles) */
-/* ClientSection.css */
+
 
 .client-section {
   background-color: #f8f8f8;
@@ -484,29 +468,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* button {
-  background-color: #007bff;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease-in-out;
-  
-}
-/*  */
-/* button:hover {
-  background-color: #0056b3;
-} */ */
-
-
-/* App.css */
- 
-
- 
-
-/* Add more styles as needed */
 
 /* App.module.css */
 

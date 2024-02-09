@@ -395,8 +395,7 @@
     font-size: 13px;
     color: #ddd;
   }
-  /* Testimonials Section
---------------------------------*/
+  /* Testimonials Section*/
 #testimonials {
   padding: 60px 0;
 }
@@ -473,8 +472,7 @@
   background-color: #18d26e;
 }
 
-/* Services Section
---------------------------------*/
+/* Services Section*/
 #services {
   background: #fff;
   background-size: cover;
@@ -518,8 +516,7 @@
   margin-bottom: 0;
 }
 
-/* Featured Services Section
---------------------------------*/
+/* Featured Services Section*/
 #featured-services {
   background: #000;
 }
@@ -638,9 +635,7 @@ a {
   transition: 0.2s;
 }
 
-/* a:hover {
-  color: inherit;
-} */
+
 
 @media (min-width: 1320px) {
   .container {

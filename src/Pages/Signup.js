@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import { ACCOUNT_TYPE } from '../utils/constants'
-import Tab from '../components/common/Tab';
 import SignupForm from '../components/core/Auth/SignupForm';
  
 const Signup = () => {
@@ -23,7 +22,6 @@ const Signup = () => {
   return (
     <>
     <div>
-        {/* <Tab tabData={tabData} field={accountType} setField={setAccountType}/> */}
         <SignupForm/>
     </div>
 

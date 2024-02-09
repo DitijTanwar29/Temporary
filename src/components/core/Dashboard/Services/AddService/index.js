@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import { addServiceDetails } from '../../../../../services/operations/serviceDetailsAPI';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { SERVICE_STATUS } from "../../../../../utils/constants"
 import IconBtn from '../../../../common/IconBtn';
 import { useForm } from "react-hook-form"
 
 
-const AddService= () => {
+const AddService = () => {
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const [serviceName, setServiceName] = useState('');
@@ -232,8 +230,8 @@ const AddService= () => {
                 
               >
                 <option value="" disabled>Choose status</option>
-                <option value={SERVICE_STATUS.ACTIVE} >{SERVICE_STATUS.ACTIVE}</option>
-                <option value={SERVICE_STATUS.INACTIVE} >{SERVICE_STATUS.INACTIVE}</option>
+                <option value="Active" >Active</option>
+                <option value="Inactive" >Inactive</option>
               </select>
               {errors.status && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
@@ -259,7 +257,7 @@ const AddService= () => {
             <div className="flex justify-end gap-2">
                 <button
                     onClick={() => {
-                    navigate("/dashboard/my-profile")
+                    navigate("/dashboard/my-services")
                     }}
                     className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
                 >

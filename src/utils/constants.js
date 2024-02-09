@@ -5,7 +5,7 @@ export const ACCOUNT_TYPE = {
   }
 
 export const SERVICE_STATUS = {
-    DRAFT: "Active",
-    PUBLISHED: "Inactive",
+    ACTIVE: "Active",
+    INACTIVE: "Inactive",
 }
   

@@ -5,15 +5,15 @@ const JobPortal = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const provinces = [
-    'Adana', 'Adıyaman', 'Afyonkarahisar', 'Ağrı', 'Aksaray', 'Amasya', 'Ankara', 'Antalya', 'Ardahan', 'Artvin',
-    // ... (other provinces in Turkey)
-  ];
+  // const provinces = [
+  //   'Adana', 'Adıyaman', 'Afyonkarahisar', 'Ağrı', 'Aksaray', 'Amasya', 'Ankara', 'Antalya', 'Ardahan', 'Artvin',
+  //   // ... (other provinces in Turkey)
+  // ];
 
-  const districts = [
-    'Çankaya', 'Keçiören', 'Yenimahalle', 'Mamak', 'Etimesgut', 'Sincan', 'Altındağ', 'Gölbaşı', 'Çubuk', 'Polatlı',
-    // ... (other districts in Turkey)
-  ];
+  // const districts = [
+  //   'Çankaya', 'Keçiören', 'Yenimahalle', 'Mamak', 'Etimesgut', 'Sincan', 'Altındağ', 'Gölbaşı', 'Çubuk', 'Polatlı',
+  //   // ... (other districts in Turkey)
+  // ];
 
   const drivers = [
     { name: 'John Doe', vehicle: 'Truck', location: 'Ankara, Çankaya', districts:'Çubuk' },

@@ -2,8 +2,8 @@ import React from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import { Navigate, useNavigate } from 'react-router-dom'
-import {MdKeyboardArrowDown} from "react-icons/md"
+import { useNavigate } from 'react-router-dom'
+// import {MdKeyboardArrowDown} from "react-icons/md"
 // import countryCode from "../../../data/countrycode.json"
 import { useDispatch } from 'react-redux'
 
@@ -95,11 +95,11 @@ const SignupForm = ({formType}) => {
     ]
 
   return (
-    <div>
+    <div className="mt-4 flex w-[50%] mx-auto flex-col gap-y-2">
     {/* candidate-company tab */}
     <Tab tabData={tabData} field={accountType} setField={setAccountType} />
     {/* form */}
-    <form onSubmit={submitHandler}  className="flex w-full flex-col gap-y-4">
+    <form onSubmit={submitHandler}  className="flex w-full flex-col gap-y-2">
     {/*  name  */}
             <label>
                 <p className='text-black font-inter mb-1 text-[0.875rem] leading-[1.375rem]'>Name<sup className='text-pink-200'>*</sup></p>
@@ -110,8 +110,8 @@ const SignupForm = ({formType}) => {
                     onChange={changeHandler}
                     placeholder='Enter Name'
                     value={name}
-                    className='placeholder-white bg-orange-500 rounded-[0.5rem]
-                     text-black text-sm font-inter h-12 w-[25%] px-4 py-4 shadow-sm shadow-richblack-200'
+                    className='placeholder-white bg-richblack-800 rounded-[0.5rem]
+                     text-black text-sm font-inter h-12 w-[50%] px-4 py-4 shadow-sm shadow-richblack-200'
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }}
@@ -129,7 +129,7 @@ const SignupForm = ({formType}) => {
                     onChange={changeHandler}
                     placeholder='Enter Last Name'
                     value={lastName}
-                    className='bg-orange-500 placeholder-white rounded-md text-richblack-200 text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
+                    className='bg-richblack-800 placeholder-white rounded-md text-richblack-200 text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }}
@@ -137,56 +137,59 @@ const SignupForm = ({formType}) => {
             </label>
     </div> */}
 
-    {/* Email Address */}
-    <label>
-        <p className='mb-1 text-[0.875rem] leading-[1.375rem] text-black font-inter'>Email Address<sup className='text-pink-200'>*</sup></p>
-        <input
-            required
-            type="email"
-            name="email"
-            onChange={changeHandler}
-            placeholder='Enter Email Address'
-            value={email}
-            className='w-[30%] placeholder-white bg-orange-500 rounded-md text-black text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
-            style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-        />
-    </label>
+    <div className='flex flex-row  gap-5'>
 
-    
-    {/* Contact Number */}
+        {/* Email Address */}
+        <label>
+            <p className='mb-1 text-[0.875rem] leading-[1.375rem] text-black font-inter'>Email Address<sup className='text-pink-200'>*</sup></p>
+            <input
+                required
+                type="email"
+                name="email"
+                onChange={changeHandler}
+                placeholder='Enter Email Address'
+                value={email}
+                className=' placeholder-white bg-richblack-800 rounded-md text-black text-sm font-inter h-12 w-54 px-4 py-4 shadow-sm shadow-richblack-200'
+                style={{
+                    boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+                }}
+            />
+        </label>
 
-            <label >
-                <p className='mb-1 text-[0.875rem] leading-[1.375rem] text-black font-inter'>Contact Number<sup className='text-pink-200'>*</sup></p>
-
-                        <input
-                            required 
-                            name="contactNumber"
-                            placeholder='Enter Contact Number'
-                            value={contactNumber}
-                            className=' placeholder-white bg-orange-500 rounded-md text-richblack-200 text-sm font-inter h-12 w-[30%] px-4 py-4 shadow-sm shadow-richblack-200'
-                            type='number'
-                            onChange={changeHandler}
-                        />
-                    {/* <div className='flex flex-row w-full gap-5'> */}
-                        {/* <div className='relative flex flex-row '>
-                            
-                            <input
-                                required
-                                
-                                name="contactNumber"
-                                placeholder='+91 '
-                                // value={countryCode.code}
-                                className='placeholder-white bg-orange-500 rounded-md text-richblack-200 text-sm font-inter h-12 w-[30%] px-4 py-4 shadow-sm shadow-richblack-200'
-
-                            />
-                            <MdKeyboardArrowDown className='text-richblack-200 cursor-pointer' />
-                        </div> */}
-
-                    {/* </div>                     */}
         
-            </label>
+        {/* Contact Number */}
+
+                <label >
+                    <p className='mb-1 text-[0.875rem] leading-[1.375rem] text-black font-inter'>Contact Number<sup className='text-pink-200'>*</sup></p>
+
+                            <input
+                                required 
+                                name="contactNumber"
+                                placeholder='Enter Contact Number'
+                                value={contactNumber}
+                                className=' placeholder-white bg-richblack-800 rounded-md text-richblack-200 text-sm font-inter h-12 w-54 px-4 py-4 shadow-sm shadow-richblack-200'
+                                type='number'
+                                onChange={changeHandler}
+                            />
+                        {/* <div className='flex flex-row w-full gap-5'> */}
+                            {/* <div className='relative flex flex-row '>
+                                
+                                <input
+                                    required
+                                    
+                                    name="contactNumber"
+                                    placeholder='+91 '
+                                    // value={countryCode.code}
+                                    className='placeholder-white bg-richblack-800 rounded-md text-richblack-200 text-sm font-inter h-12 w-[30%] px-4 py-4 shadow-sm shadow-richblack-200'
+
+                                />
+                                <MdKeyboardArrowDown className='text-richblack-200 cursor-pointer' />
+                            </div> */}
+
+                        {/* </div>                     */}
+            
+                </label>
+    </div>
 
     {/* Date and city */}
     <div className='flex flex-row  gap-5'>
@@ -199,7 +202,7 @@ const SignupForm = ({formType}) => {
                     onChange={changeHandler}
                     placeholder='Enter City'
                     value={city}
-                    className='placeholder-white bg-orange-500 rounded-[0.5rem]
+                    className='placeholder-white bg-richblack-800 rounded-[0.5rem]
                      text-black text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
@@ -217,7 +220,7 @@ const SignupForm = ({formType}) => {
                     onChange={changeHandler}
                     placeholder='Enter Date'
                     value={date}
-                    className='bg-orange-500 placeholder-white rounded-md text-richblack-200 text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
+                    className='bg-richblack-800 placeholder-white rounded-md text-richblack-200 text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm shadow-richblack-200'
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }}
@@ -238,14 +241,14 @@ const SignupForm = ({formType}) => {
                         onChange={changeHandler}
                         placeholder='Enter Password'
                         value={password}
-                        className='placeholder-white absolute bg-orange-500 rounded-md text-black text-sm font-inter h-12 w-30  px-4 py-4 shadow-sm shadow-richblack-200'
+                        className='placeholder-white absolute bg-richblack-800 rounded-md text-black text-sm font-inter h-12 w-52  px-4 py-4 shadow-sm shadow-richblack-200'
                         style={{
                             boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                           }}
                     />
 
                     <span onClick={() => setShowPassword((prev) => !prev)}>
-                        {showPassword? (<AiOutlineEyeInvisible  className=' absolute translate-x-44 translate-y-4 ' fontSize={24} fill="#AFB2BF"/>) : (<AiOutlineEye className='translate-x-44 translate-y-4  absolute' fontSize={24} fill="#AFB2BF"/>)}
+                        {showPassword? (<AiOutlineEyeInvisible  className=' absolute translate-x-44 translate-y-4 my-auto' fontSize={24} fill="#AFB2BF"/>) : (<AiOutlineEye className='translate-x-44 translate-y-4  absolute my-auto' fontSize={24} fill="#AFB2BF"/>)}
                     </span>
                 </div>
             </label>
@@ -263,7 +266,7 @@ const SignupForm = ({formType}) => {
                         onChange={changeHandler}
                         placeholder='Confirm Password'
                         value={confirmPassword}
-                        className=' placeholder-white bg-orange-500 rounded-md text-black text-sm font-inter h-12 w-30 px-4 py-4 shadow-sm ml-20 mt-12 shadow-richblack-200 absolute'
+                        className=' placeholder-white bg-richblack-800 rounded-md text-black text-sm font-inter h-12 w-52 px-4 py-4 shadow-sm ml-20 mt-12 shadow-richblack-200 absolute'
                         style={{
                             boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                           }}
@@ -279,7 +282,7 @@ const SignupForm = ({formType}) => {
         <button 
         type="submit"
         className="mt-6 rounded-[8px] bg-yellow-50 py-[8px]
-         px-[12px] font-medium text-richblack-900  "
+         px-[12px] font-medium text-richblack-900 w-[50%] mx-auto "
          >
             <p>Create Account</p>
         </button>

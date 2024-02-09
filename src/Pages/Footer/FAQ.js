@@ -1,5 +1,4 @@
 import Accordion from 'react-bootstrap/Accordion';
-import NavBar from '../NavBar';
 import Footer from './Footer';
 
 function FAQ() {

@@ -10,9 +10,9 @@ import { settingsEndpoints } from "../apis"
 const {
     UPDATE_ADMIN_DISPLAY_PICTURE_API,
     UPDATE_ADMIN_PROFILE_API,
-    UPDATE_CANDIDATE_PROFILE_API,
-    UPDATE_COMPANY_PROFILE_API,
-    DELETE_PROFILE_API
+    // UPDATE_CANDIDATE_PROFILE_API,
+    // UPDATE_COMPANY_PROFILE_API,
+    // DELETE_PROFILE_API
 } = settingsEndpoints
 
 export function updateAdminDisplayPicture(token, formData) {

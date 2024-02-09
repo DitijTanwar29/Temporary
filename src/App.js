@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import './App.css';
 import Home from './Screens/Home';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import NavBar from './Pages/NavBar';
 import Login from './Pages/Login';
 import FindJob from './Screens/FindJob.js';
@@ -19,12 +19,14 @@ import OpenRoute from "./components/core/Auth/OpenRoute"
 import PrivateRoute from "./components/core/Auth/PrivateRoute"
 import MyProfile  from "./components/core/Dashboard/MyProfile/MyProfile"
 import Dashboard from "./components/core/Dashboard/MainPage/Dashboard"
-import AddService  from "./components/core/Dashboard/Services"
+import AddService from "./components/core/Dashboard/Services/AddService"
 import Settings from './components/core/Dashboard/Settings';
-// import AddService from './components/core/Dashboard/Services';
+import Services from "./components/core/Dashboard/Services"
+import EditService from "./components/core/Dashboard/Services/EditService"
+import HomePage from "./components/core/Dashboard/MainPage/HomePage"
 function App(){
 
-  const { user } = useSelector((state) => state.profile)
+  // const { user } = useSelector((state) => state.profile)
 
   return (
     // bg-orange-400
@@ -53,12 +55,19 @@ function App(){
 
 
 
-            <Route path="/dashboard/my-profile" element={<MyProfile/>} />
+            <Route path="/dashboard/admin" element={<HomePage/>} />
             {/* Route for admin profile */}
             <Route path="/dashboard/Settings" element={<Settings />} />
+
+            <Route path="/dashboard/my-profile" element={<MyProfile/>} />
+
             {/* <Route path="/dashboard/service" element={<Services/>} /> */}
             <Route path="/dashboard/add-service" element={<AddService/>} />
-            {/* <Route path="dashboard/my-courses" element={<MyCourses />} /> */}
+            <Route path="/dashboard/my-services" element={<Services />} />
+            <Route
+                path="dashboard/edit-service/:serviceId"
+                element={<EditService />}
+              />
             
 
 

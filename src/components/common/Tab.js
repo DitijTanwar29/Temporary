@@ -1,9 +1,9 @@
 import React from "react";
-import NavBar from "../../Pages/NavBar";
-import Footer from "../../Pages/Footer/Footer";
-import email_icon from '../../Assests/Icons/email_icon.png';
-import password_icon from '../../Assests/Icons/password_icon.png';
-import user_icon from '../../Assests/Icons/user_icon.png';
+// import NavBar from "../../Pages/NavBar";
+// import Footer from "../../Pages/Footer/Footer";
+// import email_icon from '../../Assests/Icons/email_icon.png';
+// import password_icon from '../../Assests/Icons/password_icon.png';
+// import user_icon from '../../Assests/Icons/user_icon.png';
 
 export default function Tab({ tabData, field, setField }) {
   return (

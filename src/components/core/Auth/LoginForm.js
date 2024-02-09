@@ -1,7 +1,6 @@
 import React from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useState } from 'react'
-import toast from 'react-hot-toast'
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 
@@ -35,7 +34,7 @@ const LoginForm = () => {
         }
         return (
             <form onSubmit={submitHandler}
-            className="mt-6 flex w-full flex-col gap-y-4"
+            className="mt-6 flex w-[50%] mx-auto flex-col gap-y-4"
             >
         
         <label className='w-full'>

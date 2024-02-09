@@ -1,101 +1,157 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import { addServiceDetails } from '../../../../services/operations/serviceDetailsAPI';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+// import React, { useState } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+// import { addServiceDetails } from '../../../../services/operations/serviceDetailsAPI';
+// import { useNavigate } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
 
-const ServicesForm = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [serviceName, setServiceName] = useState('');
-  const [serviceIcon, setServiceIcon] = useState(null);
-  const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('');
-  
-  // const [formData, setFormData] = useState({
-  //   serviceName:"", serviceIcon:"",serviceDescription:description,status:""
-  // })
+// const ServicesForm = () => {
 
-  // const { serviceName, serviceDescription, serviceIcon, status } = formData
+//   const { user } = useSelector((state) => state.profile)
+//   const { token } = useSelector((state) => state.auth)
+//   const navigate = useNavigate()
+//   const dispatch = useDispatch()
 
-  const handleServiceIconChange = (e) => {
-    // Handle file upload logic here
-    const file = e.target.files[0];
-    if (file && /\.(jpg|jpeg|gif|png)$/.test(file.name.toLowerCase())) {
-      setServiceIcon(file);
-    } else {
-      alert('Invalid file format. Only jpg, jpeg, gif, and png are allowed.');
-    }
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    const formData = {serviceName,serviceIcon,description,status}
-    dispatch(addServiceDetails(formData))
-    console.log({
-      serviceName,
-      serviceIcon,
-      description,
-      status,
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: { errors },
+//   } = useForm()
 
-    });
-    // You can send the form data to your server or perform other actions
-  };
+//   const createServiceForm = async (data) => {
+//     // console.log("Form Data - ", data)
+//     try {
+//       dispatch(addServiceDetails(token, data))
+//     } catch (error) {
+//       console.log("ERROR MESSAGE - ", error.message)
+//     }
+//   }
+//   return(
 
-  return (
-    <div className="container mt-4">
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+//       <form onSubmit={handleSubmit(createServiceForm)}>
         
-          <label className="form-label">Service Name</label>
-          <input
-            type="text"
-            className="form-control"
-            value={serviceName}
-            onChange={(e) => setServiceName(e.target.value)}
-            placeholder="Enter Service Name"
-          />
-        </div>
+//         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
+//           <h2 className="text-lg font-semibold text-richblack-5">
+//             Create Service 
+//           </h2>
+//           <div className="flex flex-col gap-5 lg:flex-row">
 
-        <div className="mb-3">
-          <label className="form-label">Service Icon</label>
-          <input
-            type="file"
-            className="form-control"
-            accept=".jpg, .jpeg, .gif, .png"
-            onChange={handleServiceIconChange}
-          />
-          {serviceIcon && <p className="mt-2">File selected: {serviceIcon.name}</p>}
-          <p className="text-muted">(Only jpg, jpeg, gif, and png are allowed)</p>
-        </div>
+//             <div className="flex flex-col gap-2 lg:w-[33%]">
+//               <label htmlFor="serviceName" className="lable-style">
+//                 Service Name
+//               </label>
+//               <input
+//                 type="text"
+//                 name="serviceName"
+//                 id="serviceName"
+//                 placeholder="Enter first name"
+//                 className="form-style"
+//                 {...register("serviceName", { required: true })}
+//                 // defaultValue={user?.adminProfileDetails?.firstName}
+//               />
+//               {errors.serviceName && (
+//                 <span className="-mt-1 text-[12px] text-yellow-100">
+//                   Please enter your service name.
+//                 </span>
+//               )}
+//             </div>
 
-        <div className="mb-3">
-          <label className="form-label">Description</label>
-          <textarea
-            className="form-control"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter Description"
-          />
-        </div>
+            
+//             <div className="flex flex-col gap-2 lg:w-[33%]">
+//               <label htmlFor="serviceDescription" className="lable-style">
+//                 Service Description
+//               </label>
+//               <input
+//                 type="text"
+//                 name="serviceDescription"
+//                 id="serviceDescription"
+//                 placeholder="Enter service description"
+//                 className="form-style"
+//                 {...register("serviceDescription", { required: true })}
+//                 // defaultValue={user?.adminDetails?.lastName}
+//               />
+//               {errors.serviceDescription && (
+//                 <span className="-mt-1 text-[12px] text-yellow-100">
+//                   Please enter your service description.
+//                 </span>
+//               )}
+//             </div>
+//           </div>
 
-        <div className="mb-3">
-          <label className="form-label">Status</label>
-          <select
-            className="form-select"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <option value="">----Status----</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
-        </div>
+//           <div className="flex flex-col gap-5 lg:flex-row">
+            
 
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-    </div>
-  );
-};
+//             <div className="flex flex-col gap-2 lg:w-[48%]">
+//               <label htmlFor="bio" className="lable-style">
+//                 Bio
+//               </label>
+//               <input
+//                 type="text"
+//                 name="bio"
+//                 id="bio"
+//                 placeholder="Enter Bio Details"
+//                 className="form-style"
+//                 {...register("bio", { required: true })}
+//                 defaultValue={user?.adminDetails?.bio}
+//               />
+//               {errors.bio && (
+//                 <span className="-mt-1 text-[12px] text-yellow-100">
+//                   Please enter your Bio.
+//                 </span>
+//               )}
+//             </div> 
+            
+//             <div className="flex flex-col space-y-2">
+//               <label className="lable-style" htmlFor="status">
+//                 Status <sup className="text-pink-200">*</sup>
+//               </label>
+//               <select
+//                 {...register("status", { required: true })}
+//                 defaultValue=""
+//                 id="status"
+//                 className="form-style"
+//               >
+//                 <option value="" disabled>
+//                   Choose a Status
+//                 </option>
+//                 <option>Active</option>
+//                 <option>Inctive</option>
 
-export default ServicesForm;
+//               </select>
+//               {errors.status && (
+//                 <span className="ml-2 text-xs tracking-wide text-pink-200">
+//                   Course Status is required
+//                 </span>
+//               )}
+//             </div>
+//           </div>
+
+          
+
+
+          
+
+          
+
+          
+
+
+//         </div>
+
+
+//             <div className="flex justify-end gap-2">
+//                 <button
+//                     onClick={() => {
+//                     navigate("/dashboard/my-profile")
+//                     }}
+//                     className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+//                 >
+//                     Cancel
+//                 </button>
+//                 <IconBtn type="submit" text="Save" />
+//             </div>
+//       </form>
+//   )
+
+// };
+
+// export default ServicesForm

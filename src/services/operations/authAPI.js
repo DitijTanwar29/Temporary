@@ -4,11 +4,12 @@ import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
 import { setUser } from "../../slices/profileSlice"
 
-const { SENDOTP_API,
+const { 
     SIGNUP_API,
     LOGIN_API,
-    RESETPASSTOKEN_API,
-    RESETPASSWORD_API,
+    // SENDOTP_API,
+    // RESETPASSTOKEN_API,
+    // RESETPASSWORD_API,
 } = endpoints
 
 //rest apis are not mentioned here 

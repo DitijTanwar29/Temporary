@@ -110,14 +110,6 @@ body {
   box-sizing: border-box;         
 
  }
-.ProfileSetting{
-  
- 
-  
-  
-   
- 
-}
 
 .menu-icon {
   display: none;
@@ -328,8 +320,7 @@ body {
   opacity: 1;
 }
 
- 
-/* /* ResponsiveForm.css */
+
  
  
 
@@ -345,15 +336,9 @@ body {
   margin-bottom: 15px;
 }
 
-/* .btn-block {
-  display: block;
-  width: 100%;
-} */
- /* ResponsiveForm.css */
 
 .responsive-form {
   width: 100%;
-  /* max-width: 600px; */
   padding: 20px;
   border: 1px solid #ced4da;
   border-radius: 8px;
@@ -391,7 +376,7 @@ body {
 /* .btn-block:hover {
   background-color: #0056b3;
 }
-  */
+*/
 /* SocialForm.css */
 .social-form {
   /* max-width: 400px; */
@@ -537,8 +522,6 @@ th {
   align-items: center;
 }
 
- /* Add these styles to your existing CSS file or create a new one */
-
 /* .sidebar-list-item a {
   text-decoration: none;
   color: white;
@@ -681,7 +664,12 @@ th {
   }
 }
 
-
+.lable-style {
+  @apply text-[14px] text-richblack-5;
+}
+.form-style {
+  @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+}
 
  
 

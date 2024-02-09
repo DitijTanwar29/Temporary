@@ -1,17 +1,17 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 // import './App.css'
- import Header from  './Header'
+//  import Header from  './Header'
 // import Sidebar from './SideBar'
-import Home from  './Home'
+// import Home from  './HomePage'
 import { Outlet } from "react-router-dom"
-import Sidebar from "../../../../components/core/Dashboard/Sidebar"
+import Sidebar from "../Sidebar"
 
 function Dashboard() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  // const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+  // const OpenSidebar = () => {
+  //   setOpenSidebarToggle(!openSidebarToggle)
+  // }
 
   return (
     <div className='relative flex h-full'>

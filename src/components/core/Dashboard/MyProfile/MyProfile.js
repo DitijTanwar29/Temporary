@@ -1,18 +1,18 @@
 import React from "react";
-import { useState } from "react";
-import Header from "../MainPage/Header";
-import Sidebar from "../MainPage/SideBar";
+// import { useState } from "react";
+// import Header from "../MainPage/Header";
+// import Sidebar from "../MainPage/SideBar";
 import { RiEditBoxLine } from "react-icons/ri"
 
 import { useSelector } from "react-redux"
-import ImageUpload from "./ImageUpload";
-import ProfileSettingsForm from "./ProfileSettings";
-import SocialForm from "./SocialNetwork";
+// import ImageUpload from "./ImageUpload";
+// import ProfileSettingsForm from "./ProfileSettings";
+// import SocialForm from "./SocialNetwork";
 // import FooterDash from "../../Footer/FooterDash";
 import { useNavigate } from "react-router-dom"
 
 import IconBtn from "../../../common/IconBtn"
-import { formattedDate } from "../../../../utils/dataFormatter"
+// import { formattedDate } from "../../../../utils/dataFormatter"
 
 
 const MyProfile = () => {

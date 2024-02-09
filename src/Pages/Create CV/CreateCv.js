@@ -9,7 +9,6 @@ import {
   Alert,
  
 } from "react-bootstrap";
-import NavBar from "../NavBar";
 import Footer from "../Footer/Footer";
 const CreateCv = () => {
   // State to hold form data

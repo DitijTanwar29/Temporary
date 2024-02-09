@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Table, Tbody, Td, Th, Thead, Tr } from "react-super-responsive-table"
 
-import { setService, setEditService } from "../../../../slices/serviceSlice"
+// import { setService, setEditService } from "../../../../slices/serviceSlice"
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
 import { useState } from "react"
 import { FaCheck } from "react-icons/fa"
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom"
 import  ConfirmationModal  from "../../../../components/common/ConfirmationModal"
 // import { formatDate } from "../../../../../services/formatDate"
 import {
-//   deleteService,
+  deleteService,
   getAllServices,
 } from "../../../../services/operations/serviceDetailsAPI"
 import { SERVICE_STATUS } from "../../../../utils/constants"
@@ -26,16 +26,16 @@ export default function CoursesTable({ services, setServices }) {
   const [confirmationModal, setConfirmationModal] = useState(null)
   const TRUNCATE_LENGTH = 30
 
-//   const handleServiceDelete = async (serviceId) => {
-//     setLoading(true)
-//     await deleteService({ serviceId: serviceId }, token)
-//     const result = await fetchInstructorCourses(token)
-//     if (result) {
-//       setServices(result)
-//     }
-//     setConfirmationModal(null)
-//     setLoading(false)
-//   }
+  const handleServiceDelete = async (serviceId) => {
+    setLoading(true)
+    await deleteService({ serviceId: serviceId }, token)
+    const result = await getAllServices(token)
+    if (result) {
+      setServices(result)
+    }
+    setConfirmationModal(null)
+    setLoading(false)
+  }
 
   // console.log("All Course ", courses)
 
@@ -119,7 +119,7 @@ export default function CoursesTable({ services, setServices }) {
                   {service.action}
                 </Td>
                 <Td className="text-sm font-medium text-richblack-100 ">
-                  {/* <button
+                  <button
                     disabled={loading}
                     onClick={() => {
                       navigate(`/dashboard/edit-service/${service._id}`)
@@ -128,8 +128,8 @@ export default function CoursesTable({ services, setServices }) {
                     className="px-2 transition-all duration-200 hover:scale-110 hover:text-caribbeangreen-300"
                   >
                     <FiEdit2 size={20} />
-                  </button> */}
-                  {/* <button
+                  </button>
+                  <button
                     disabled={loading}
                     onClick={() => {
                       setConfirmationModal({
@@ -139,7 +139,7 @@ export default function CoursesTable({ services, setServices }) {
                         btn1Text: !loading ? "Delete" : "Loading...  ",
                         btn2Text: "Cancel",
                         btn1Handler: !loading
-                          ? () => handleCourseDelete(service._id)
+                          ? () => handleServiceDelete(service._id)
                           : () => {},
                         btn2Handler: !loading
                           ? () => setConfirmationModal(null)
@@ -150,14 +150,14 @@ export default function CoursesTable({ services, setServices }) {
                     className="px-1 transition-all duration-200 hover:scale-110 hover:text-[#ff0000]"
                   >
                     <RiDeleteBin6Line size={20} />
-                  </button> */}
+                  </button>
                 </Td>
               </Tr>
             ))
           )}
         </Tbody>
       </Table>
-      {/* {confirmationModal && <ConfirmationModal modalData={confirmationModal} />} */}
+      {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   )
 }

@@ -11,7 +11,7 @@ import { AiOutlineMenu } from "react-icons/ai"
 export default function NavBar()  {
 
   const {token} = useSelector( (state) => state.auth );
-  const {user} = useSelector( (state) => state.profile);
+  // const {user} = useSelector( (state) => state.profile);
 
   const location = useLocation();
 

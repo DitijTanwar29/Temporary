@@ -10,15 +10,15 @@ export const sidebarLinks = [
   {
     id: 2,
     name: "Dashboard",
-    path: "/dashboard/instructor",
-    type: ACCOUNT_TYPE.INSTRUCTOR,
+    path: "/dashboard/admin",
+    type: ACCOUNT_TYPE.ADMIN,
     icon: "VscDashboard",
   },
   {
     id: 3,
-    name: "My Courses",
-    path: "/dashboard/my-courses",
-    type: ACCOUNT_TYPE.INSTRUCTOR,
+    name: "My Services",
+    path: "/dashboard/my-services",
+    type: ACCOUNT_TYPE.ADMIN,
     icon: "VscVm",
   },
   {
@@ -28,13 +28,13 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.ADMIN,
     icon: "VscAdd",
   },
-  {
-    id: 5,
-    name: "Enrolled Courses",
-    path: "/dashboard/enrolled-courses",
-    type: ACCOUNT_TYPE.STUDENT,
-    icon: "VscMortarBoard",
-  },
+  // {
+  //   id: 5,
+  //   name: "Enrolled Courses",
+  //   path: "/dashboard/enrolled-courses",
+  //   type: ACCOUNT_TYPE.STUDENT,
+  //   icon: "VscMortarBoard",
+  // },
   // {
   //   id: 7,
   //   name: "Cart",

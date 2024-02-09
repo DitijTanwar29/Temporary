@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 import { getAllServices } from "../../../../services/operations/serviceDetailsAPI"
 import IconBtn from "../../../common/IconBtn"
-import AddServiceForm from "./AddServiceForm"
+
 import ServicesTable from "./ServicesTable"
 
 export default function AddService() {
@@ -16,6 +16,7 @@ export default function AddService() {
   useEffect(() => {
     const fetchServices = async () => {
       const result = await getAllServices(token)
+      console.log("result : ",result);
       if (result) {
         setServices(result)
       }
@@ -30,12 +31,12 @@ export default function AddService() {
         <h1 className="text-3xl font-medium text-richblack-5">My Services</h1>
         <IconBtn
           text="Add Service"
-          onclick={() => navigate("dashboard/add-service")}
+          onclick={() => navigate("/dashboard/add-service")}
         >
           <VscAdd />
         </IconBtn>
       </div>
-      <AddServiceForm/>
+
       {services && <ServicesTable services={services} setServices={setServices} />}
     </div>
   )

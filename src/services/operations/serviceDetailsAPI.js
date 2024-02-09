@@ -30,20 +30,21 @@ export const getAllServices = async () => {
     return result
 }
 
-export const fetchServiceDetails = async (courseId) => {
+export const fetchServiceDetails = async (serviceId) => {
     const toastId = toast.loading("Loading...")
     //   dispatch(setLoading(true));
     let result = null
     try {
       const response = await apiConnector("POST", SERVICE_DETAILS_API, {
-        courseId,
+        serviceId,
       })
       console.log("SERVICE_DETAILS_API API RESPONSE............", response)
   
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      result = response.data
+      result = response.data.data
+      
     } catch (error) {
       console.log("SERVICE_DETAILS_API ERROR............", error)
       result = error.response.data
@@ -98,4 +99,23 @@ export const editServiceDetails = async (data, token) => {
     }
     toast.dismiss(toastId)
     return result
+}
+
+//delete service 
+export const deleteService = async (data, token) => {
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await apiConnector("DELETE", DELETE_SERVICE_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("DELETE SERVICE API RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Delete service")
+    }
+    toast.success("Service Deleted")
+  } catch (error) {
+    console.log("DELETE SERVICE API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
 }

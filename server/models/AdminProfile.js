@@ -24,7 +24,6 @@ const adminProfileSchema = new mongoose.Schema({
     bio: {
         type: String,
     },
-    // {user?.adminDetails?.post && "Enter you post"}
 });
 
 module.exports = mongoose.model("AdminProfile", adminProfileSchema);
