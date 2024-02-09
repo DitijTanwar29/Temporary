@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero_FindJob = () => {
+const Hero_Find_Job = () => {
   return (
     <div
       id="carouselExampleControls"
@@ -54,4 +54,4 @@ const Hero_FindJob = () => {
   );
 };
 
-export default Hero_FindJob;
+export default Hero_Find_Job;

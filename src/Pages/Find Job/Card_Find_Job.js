@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-const Card_FindJob = () => {
+const Card_Find_Job = () => {
   return (
     <>
       <div>
@@ -131,4 +131,4 @@ const Card_FindJob = () => {
   );
 };
 
-export default Card_FindJob;
+export default Card_Find_Job;
