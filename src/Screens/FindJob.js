@@ -2,7 +2,7 @@ import React from "react";
 import Car1 from "../Pages/Car1";
 import Exam2 from "../Pages/Exam2";
 import Footer from "../Pages/Footer/Footer";
-import Hero_FindJob from "../Pages/Find Job/Hero_FindJob";
+import Hero_FindJob  from "../Pages/Find Job/Hero_FindJob";
  import Job from "../Pages/Find Job/Position_findJob";
 import Card_FindJob from "../Pages/Find Job/Card_FindJob";
 import "../Pages/Body.css"
