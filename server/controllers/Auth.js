@@ -46,9 +46,9 @@ exports.signup = async(req, res)=>{
                date,
                city,
                accountType
-            } = req.body.email;
+            } = req.body;
 
-            console.log("Reqyest body: ",req.body.email);
+            console.log("Reqyest body: ",req.body);
          //validate data
          if(!name || !email || !contactNumber || !date || !city || !password || !confirmPassword || !accountType){
             return res.status(403).json({
