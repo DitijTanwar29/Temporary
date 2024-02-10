@@ -1,4 +1,4 @@
-const BASE_URL = "https://surucucv-ejm4.onrender.com";
+const BASE_URL = "https://surucucv-ejm4.onrender.com/api/v1";
 
 //AUTH ENDPOINTS
 export const endpoints = {
