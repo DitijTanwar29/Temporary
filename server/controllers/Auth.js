@@ -46,7 +46,7 @@ exports.signup = async(req, res)=>{
                date,
                city,
                accountType
-            } = req.body;
+            } = req.body.email;
 
             console.log("Reqyest body: ",req.body.email);
          //validate data
@@ -136,11 +136,6 @@ exports.signup = async(req, res)=>{
          companyDetails: companyProfileDetails._id,
          image: "",
         })
-        .populate([
-            {path : "adminDetails"},
-            {path : "companyDetails"},
-            {path : "candidateDetails"}
-        ]).exec();
 
       // const popu = await User.findById(user_id).populate('adminDetails').populate('companyDetails').populate('candidateDetails').exec();
         //return response
