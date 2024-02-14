@@ -36,7 +36,7 @@ const PostJob = () => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        // dispatch()
+        // dispatch(addJobPost(formData))
         // Add your logic to handle form submission (e.g., send data to server, update state, etc.)
         console.log('Form data submitted:', formData);
       };
