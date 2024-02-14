@@ -39,23 +39,20 @@ const userSchema = new mongoose.Schema({
         enum: ["Admin","Candidate","Company"],
         required: true
     },
-    adminDetails: 
-        {
+    adminDetails: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "AdminProfile",
-        },
-    candidateDetails: [
-        {
+    },
+    candidateDetails: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "CandidateProfile",
-        }
-    ],
-    companyDetails: [
-        {
+    }
+    ,
+    companyDetails: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "CompanyProfile",
-        }
-    ],
+    }
+    ,
     token: {
         type: String,
     },

@@ -100,12 +100,12 @@ exports.editService = async (req, res) => {
 
         //if serviceIcon is found, update it
         if(req.files){
-            const Icon = req.files.serviceIcon;
+            const icon = req.files.serviceIcon;
             const serviceIcon = await uploadImageToCloudinary(
-                Icon,
+                icon,
                 process.env.FOLDER_NAME
             )
-            service.Icon = serviceIcon.secure_url
+            service.icon = serviceIcon.secure_url
         }
 
         //updating fields that are present in request body

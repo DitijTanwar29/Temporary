@@ -6,6 +6,7 @@ export const sidebarLinks = [
     name: "My Profile",
     path: "/dashboard/my-profile",
     icon: "VscAccount",
+    type: ACCOUNT_TYPE.ADMIN,
   },
   {
     id: 2,
@@ -26,6 +27,21 @@ export const sidebarLinks = [
     name: "Add Service",
     path: "/dashboard/add-service",
     type: ACCOUNT_TYPE.ADMIN,
+    icon: "VscAdd",
+  },
+  {
+    id: 5,
+    name: "My Profile",
+    path: "/dashboard/my-profile",
+    icon: "VscAccount",
+    type: ACCOUNT_TYPE.COMPANY,
+
+  },
+  {
+    id: 6,
+    name: "Post Job",
+    path: "/dashboard/post-job",
+    type: ACCOUNT_TYPE.COMPANY,
     icon: "VscAdd",
   },
   // {

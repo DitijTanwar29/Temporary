@@ -2,6 +2,7 @@ import { toast } from "react-hot-toast"
 
 import { apiConnector } from "../apiConnector"
 import { serviceEndpoints } from "../apis"
+import { setEditService } from "../../slices/serviceSlice"
 
 const {
     SERVICE_DETAILS_API,
@@ -87,12 +88,13 @@ export const editServiceDetails = async (data, token) => {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,
       })
-      console.log("EDIT COURSE API RESPONSE............", response)
+      console.log("EDIT SERVICE API RESPONSE............", response)
       if (!response?.data?.success) {
         throw new Error("Could Not Update Service Details")
       }
       toast.success("Service Details Updated Successfully")
       result = response?.data?.data
+      // dispatch(setEditService({...result}))/* Need to test this new change*/
     } catch (error) {
       console.log("EDIT SERVICE API ERROR............", error)
       toast.error(error.message)

@@ -1,10 +1,12 @@
-const BASE_URL = "https://surucucv-ejm4.onrender.com/api/v1";
+// const BASE_URL = "https://surucucv-ejm4.onrender.com/api/v1";
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 //AUTH ENDPOINTS
 export const endpoints = {
     // SENDOTP_API: BASE_URL + "/auth/sendotp",
-    SIGNUP_API: BASE_URL + "/auth/signup",
-    LOGIN_API: "https://surucucv-ejm4.onrender.com/api/v1/auth/login",
+    SIGNUP_API: "http://localhost:1200/api/v1/auth/signup",
+    // LOGIN_API: "https://surucucv-ejm4.onrender.com/api/v1/auth/login",
+    LOGIN_API: "http://localhost:1200/api/v1/auth/login",
     // RESETPASSTOKEN_API: BASE_URL + "/auth/reset-password-token",
     // RESETPASSWORD_API: BASE_URL + "/auth/reset-password"
 }
@@ -35,8 +37,8 @@ export const settingsEndpoints = {
     UPDATE_CANDIDATE_DISPLAY_PICTURE_API: BASE_URL + "/candidateProfile/updateDisplayPicture",
 
     UPDATE_ADMIN_PROFILE_API: BASE_URL + "/adminProfile/updateAdminProfile",
-    UPDATE_COMPANY_PROFILE_API: BASE_URL + "/companyProfile/updateCandidateProfile",
-    UPDATE_CANDIDATE_PROFILE_API: BASE_URL + "/candidateProfile/updateCompanyProfile",
+    UPDATE_COMPANY_PROFILE_API: BASE_URL + "/companyProfile/updateCompanyProfile",
+    UPDATE_CANDIDATE_PROFILE_API: BASE_URL + "/candidateProfile/updateCandidateProfile",
 
     // CHANGE_PASSWORD_API: BASE_URL + "/auth/changepassword",
     // DELETE_PROFILE_API: BASE_URL + "/profile/deleteProfile",
@@ -51,6 +53,10 @@ export const serviceEndpoints = {
     GET_ALL_SERVICES_API : BASE_URL + "/service/showAllServices",
     DELETE_SERVICE_API : BASE_URL + "/service/deleteService",
 
+}
 
+//JOBS ENDPOINTS
+export const jobEndpoints = {
+    CREATE_JOB_API : BASE_URL + "/job/createJob",
 
 }

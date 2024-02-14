@@ -12,13 +12,13 @@ import { setSignupData } from '../../../slices/authSlice'
 import  {ACCOUNT_TYPE}  from "../../../utils/constants"
 import Tab from "../../common/Tab"
 
-const SignupForm = ({formType}) => {
+const SignupForm = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch(); 
 
     // student or instructor
     const [accountType, setAccountType] = useState(ACCOUNT_TYPE.CANDIDATE)
-
+    console.log("account type : ",accountType)
     const [formData, setFormData] = useState({
         name:"",
         email:"",
@@ -35,7 +35,7 @@ const SignupForm = ({formType}) => {
 
     const { name, email, password, confirmPassword, contactNumber, date, city } = formData
 
-    console.log(email);
+    // console.log(email);
     
     //Handling input fields, when some value changes
     function changeHandler(event) {
@@ -60,24 +60,12 @@ const SignupForm = ({formType}) => {
             ...formData,
             accountType,
         }
-        console.log(signupData);
+        console.log("signupData : ",signupData);
         //setting signup datat to state
         // To be used after otp verification
-        dispatch(setSignupData(signupData))
+        // dispatch(setSignupData(signupData))
         // Send OTP to the user for verification
         dispatch(signup(signupData, navigate))
-
-        //Reset
-        setFormData({
-            name:"",
-            email: "",
-            password: "",
-            confirmPassword: "",
-            contactNumber:"",
-            date:"",
-            city:"",
-        })
-        setAccountType(ACCOUNT_TYPE.CANDIDATE)
     }
 
     //data to pass to Tab component

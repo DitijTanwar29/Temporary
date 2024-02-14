@@ -3,6 +3,7 @@ import { setLoading, setToken } from "../../slices/authSlice"
 import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
 import { setUser } from "../../slices/profileSlice"
+import {ACCOUNT_TYPE} from "../../utils/constants"
 
 const { 
     SIGNUP_API,
@@ -29,7 +30,7 @@ export function signup(
     // otp,
 ) {
     return async (dispatch) => {
-        console.log(email);
+        console.log("email inside SIGNUP authAPI : ",email);
         const toastId = toast.loading("Loading...")
         dispatch(setLoading(true))
         try{
@@ -66,7 +67,7 @@ export function signup(
 
 export function login(email, password, navigate) {
     return async (dispatch) => {
-        // const toastId = toast.loading("Loading...")
+        const toastId = toast.loading("Loading...")
         dispatch(setLoading(true))
         try{
             const response = await apiConnector("POST", LOGIN_API, {
@@ -90,14 +91,15 @@ export function login(email, password, navigate) {
                 localStorage.setItem("token", JSON.stringify(response.
                     data.token))
                 localStorage.setItem("user", JSON.stringify(response.data.user))
-
                 navigate("/dashboard/my-profile")
+                
+                
         } catch (error) {
             console.log("LOGIN API ERROR................", error)
             toast.error("Login Failed")
         }
         dispatch(setLoading(false))
-        // toast.dismiss(toastId)
+        toast.dismiss(toastId)
     }
 }
 

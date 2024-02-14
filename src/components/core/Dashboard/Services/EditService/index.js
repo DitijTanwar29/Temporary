@@ -74,52 +74,52 @@ const EditService = () => {
   
   const onSubmit = async (data) => {
     console.log("Form Data after form submission - ", data)
-    navigate("/dashboard/my-services")
-    if (editService) {
-      // const currentValues = getValues()
-      // console.log("changes after editing form values:", currentValues)
-      // console.log("now course:", course)
-      // console.log("Has Form Changed:", isFormUpdated())
-      if (isFormUpdated()) {
-        const currentValues = getValues()
-        const formData = new FormData()
-        console.log("updated value :",data)
-        formData.append("serviceId", service._id)
-        if (currentValues.serviceName !== service.serviceName) {
-          formData.append("serviceName", data.serviceName)
-        }
-        if (currentValues.serviceDescription !== service.serviceDescription) {
-          formData.append("serviceDescription", data.serviceDescription)
-        }
-        if (currentValues.status !== service.status) {
-          formData.append("status", data.status)
-        }
-        if (currentValues.serviceIcon !== service.serviceIcon) {
-          formData.append("serviceIcon", data.serviceIcon[0])
-        }
-        console.log("Edit Form data: ", formData)
-        setLoading(true)
-        const result = await editServiceDetails(formData, token)
-        console.log("form data after editing : ",result)
-        setLoading(false)
-        if (result) {
-          dispatch(setService(result))
+    // navigate("/dashboard/my-services")
+    // if (editService) {
+    //   // const currentValues = getValues()
+    //   // console.log("changes after editing form values:", currentValues)
+    //   // console.log("now course:", course)
+    //   // console.log("Has Form Changed:", isFormUpdated())
+    //   if (isFormUpdated()) {
+    //     const currentValues = getValues()
+    //     const formData = new FormData()
+    //     console.log("updated value :",data)
+    //     formData.append("serviceId", service._id)
+    //     if (currentValues.serviceName !== service.serviceName) {
+    //       formData.append("serviceName", data.serviceName)
+    //     }
+    //     if (currentValues.serviceDescription !== service.serviceDescription) {
+    //       formData.append("serviceDescription", data.serviceDescription)
+    //     }
+    //     if (currentValues.status !== service.status) {
+    //       formData.append("status", data.status)
+    //     }
+    //     if (currentValues.serviceIcon !== service.serviceIcon) {
+    //       formData.append("serviceIcon", data.serviceIcon[0])
+    //     }
+    //     console.log("Edit Form data: ", formData)
+    //     setLoading(true)
+    //     const result = await editServiceDetails(formData, token)
+    //     console.log("form data after editing : ",result)
+    //     setLoading(false)
+    //     if (result) {
+    //       dispatch(setService(result))
           
-        }
-      } else {
-        toast.error("No changes made to the form")
-      }
-      return
-    }
-
-
-
-
-    // try {
-    //   dispatch(editServiceDetails({...data, serviceIcon:data.serviceIcon[0]},token))
-    // } catch (error) {
-    //   console.log("ERROR MESSAGE - ", error.message)
+    //     }
+    //   } else {
+    //     toast.error("No changes made to the form")
+    //   }
+    //   return
     // }
+
+
+
+
+    try {
+      dispatch(editServiceDetails({...data, serviceIcon:data.serviceIcon[0]},token))
+    } catch (error) {
+      console.log("ERROR MESSAGE - ", error.message)
+    }
   }
   return (
     

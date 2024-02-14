@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 import { updateAdminProfile } from "../../../../services/operations/SettingsAPI"
 import IconBtn from "../../../common/IconBtn"
-  
-// const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
+
 
 export default function EditProfile() {
   const { user } = useSelector((state) => state.profile)

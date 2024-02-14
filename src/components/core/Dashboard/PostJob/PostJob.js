@@ -1,15 +1,18 @@
 // AdvertisementManagement.js
 import { useState } from "react";
 import React from 'react';
-import Header from "../MainPage/Header";
-import Sidebar from "../MainPage/SideBar";
-import AddButton from "../Buttons/AddServicesBut";
+// import Header from "../MainPage/Header";
+// import Sidebar from "../MainPage/SideBar";
+import IconBtn from "../../../../components/common/IconBtn";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
  
 
-const  PostJob= () => {
-    const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
+const PostJob = () => {
+    // const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
     const [formData, setFormData] = useState({
         sno: '',
         icon: '',
@@ -33,23 +36,26 @@ const  PostJob= () => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
+        // dispatch()
         // Add your logic to handle form submission (e.g., send data to server, update state, etc.)
         console.log('Form data submitted:', formData);
       };
-    const OpenSidebar = () => {
-      setOpenSidebarToggle(!openSidebarToggle);
-    };
+    // const OpenSidebar = () => {
+    //   setOpenSidebarToggle(!openSidebarToggle);
+    // };
     
   return (
     <div className="grid-container">
-    <Header OpenSidebar={OpenSidebar} />
-    <Sidebar
+    {/* <Header OpenSidebar={OpenSidebar} /> */}
+    {/* <Sidebar
       openSidebarToggle={openSidebarToggle}
-      OpenSidebar={OpenSidebar} />
+      OpenSidebar={OpenSidebar} /> */}
 
     <div className="section-myProfile">
       <div className="main-myProfile">
-        <div><AddButton/></div>
+        <div><IconBtn text={"Create Job Post"} 
+          onclick={navigate}
+        /></div>
     <div className="advertisement-management">
       <h2> POST JOB</h2>
       <form onSubmit={handleSubmit}>

@@ -2,18 +2,19 @@ import React from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import {login} from "../../../services/operations/authAPI"
 
 const LoginForm = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
-
+    // const { user } = useSelector((state) => state.profile)
     const [formData, setFormData] = useState({
         email:"", password:""
     })
 
+    // console.log("accountType in loginform : ",user?.accountType)
     const [showPassword, setShowPassword] = useState(false)
     
   const { email, password } = formData

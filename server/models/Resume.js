@@ -4,7 +4,7 @@ const resumeSchema = new mongoose.Schema({
 
     // Basic Details
     tcNumber :{
-        type: Number,
+        type: String,
     },
     fullName: {
         type: String,

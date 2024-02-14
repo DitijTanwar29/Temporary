@@ -17,7 +17,7 @@ const companyProfileSchema = new mongoose.Schema({
     dateOfBirth: {
         type: String,
     },
-    compantTitle: {
+    companyTitle: {
         type:String,
     },
     industryName: {
@@ -27,7 +27,7 @@ const companyProfileSchema = new mongoose.Schema({
         type: String,
     },
     taxNumber: {
-        type: Number,
+        type: String,
     },
     companyAddress: {
         type: String,

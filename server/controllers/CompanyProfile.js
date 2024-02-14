@@ -6,12 +6,12 @@ exports.updateCompanyProfile = async (req, res) => {
     try{
         //get data
         const { 
-        name="", email, position="", contactNumber, dateOfBirth="",
-         companyTitle="", industryName="", taxAdministration="",
+        name, email, position="", contactNumber, dateOfBirth="",
+         companyTitle, industryName, taxAdministration="",
           taxNumber, companyAddress="" } = req.body;
 
-        const profileImage = req.files.profileImage;
-        const coverImage = req.files.coverImage;
+        // const profileImage = req.files.profileImage;
+        // const coverImage = req.files.coverImage;
         
           //get userId
           const id = req.user.id;
@@ -31,20 +31,20 @@ exports.updateCompanyProfile = async (req, res) => {
         console.log("userDetails",userDetails);
 
         //upload profile pic
-        const profilePic = await uploadImageToCloudinary(
-            profileImage,
-            process.env.FOLDER_NAME,
-            1000,
-            1000
-        )
+        // const profilePic = await uploadImageToCloudinary(
+        //     profileImage,
+        //     process.env.FOLDER_NAME,
+        //     1000,
+        //     1000
+        // )
         // console.log(profilePic);
         //upload cover pic 
-        const coverPic = await uploadImageToCloudinary(
-            coverImage,
-            process.env.FOLDER_NAME,
-            1000,
-            1000
-        )
+        // const coverPic = await uploadImageToCloudinary(
+        //     coverImage,
+        //     process.env.FOLDER_NAME,
+        //     1000,
+        //     1000
+        // )
         // console.log(coverPic);
 
 
@@ -61,8 +61,8 @@ exports.updateCompanyProfile = async (req, res) => {
         companyProfileDetails.companyAddress = companyAddress;
 
 
-        companyProfileDetails.companyIcon = profilePic.secure_url;
-        companyProfileDetails.companyBackgroundIcon = coverPic.secure_url;
+        // companyProfileDetails.companyIcon = profilePic.secure_url;
+        // companyProfileDetails.companyBackgroundIcon = coverPic.secure_url;
 
         await companyProfileDetails.save();
 
