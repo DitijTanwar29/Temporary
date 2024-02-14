@@ -36,15 +36,15 @@ app.use(
       {origin:"http://localhost:3000", credentials:true}
    )
 )
-// app.use(
-//    cors()
-// )
 app.use(
-   fileUpload({
-      useTempFiles:true,
-      tempFileDir:"/tmp",
-   })
+   cors()
 )
+// app.use(
+//    fileUpload({
+//       useTempFiles:true,
+//       tempFileDir:"/tmp",
+//    })
+// )
 
 //cloudinary connect
 cloudinaryConnect();
