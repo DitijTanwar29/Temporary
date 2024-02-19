@@ -6,11 +6,14 @@ exports.createJob = async (req, res) => {
     try{
         //fetch data
         const userId = req.user.id;
-
+        console.log("Request body : ",req.body)
         const {
-            title, description, service, skills, experience, 
+            title, description, service, skills, requiredExperience, 
             location,companyName, salaryRange, salaryType, 
-            vacancy, startDate, endDate, jobType, status 
+            vacancy, startDate, endDate, jobType, status,
+            licenseType,srcBox,psikoteknik,adrDriverLicence,
+            passport,visa,abroadExperience,
+            isBlindSpotTraining,isSafeDrivingTraining,isFuelEconomyTraining
         } = req.body;
 
         //validate data
@@ -18,7 +21,7 @@ exports.createJob = async (req, res) => {
             !title ||
             !description ||
             !skills ||
-            !experience ||
+            !requiredExperience ||
             !location ||
             !companyName ||
             !salaryRange ||
@@ -27,7 +30,17 @@ exports.createJob = async (req, res) => {
             !startDate ||
             !endDate ||
             !jobType ||
-            !service
+            !service ||
+            !licenseType ||
+            !srcBox ||
+            !psikoteknik ||
+            !adrDriverLicence ||
+            !passport ||
+            !visa ||
+            !abroadExperience ||
+            !isBlindSpotTraining ||
+            !isSafeDrivingTraining ||
+            !isFuelEconomyTraining
         ) {
             return res.status(400).json({
                 success: false,
@@ -66,7 +79,7 @@ exports.createJob = async (req, res) => {
             company: companyDetails._id,
             service: service,
             requiredSkills: skills,
-            requiredExperience: experience,
+            requiredExperience: requiredExperience,
             rangeOfSalary: salaryRange,
             salaryType: salaryType,
             jobLocation: location,
@@ -74,10 +87,20 @@ exports.createJob = async (req, res) => {
             numberOfVacancy: vacancy,
             applicationStartDate: startDate,
             applicationEndDate: endDate,
-            status: status,
-            jobType: jobType, 
+            jobType: jobType,
+            licenseType:licenseType,
+            srcBox: srcBox,
+            psikoteknik: psikoteknik,
+            adrDriverLicence: adrDriverLicence,
+            passport: passport,
+            visa: visa,
+            abroadExperience: abroadExperience,
+            isBlindSpotTraining: isBlindSpotTraining,
+            isSafeDrivingTraining: isSafeDrivingTraining,
+            isFuelEconomyTraining: isFuelEconomyTraining,
         })
 
+        console.log(" New Job details : ",newJob)
         //add new job to the user schema of company
         await User.findByIdAndUpdate(
             {_id: companyDetails._id},
@@ -103,7 +126,7 @@ exports.createJob = async (req, res) => {
         //return res
         return res.status(200).json({
             success:true,
-            message:'Job created successfully',
+            message:'Request for Job createation sent successfully',
             data:newJob,
         });
     }catch(error){

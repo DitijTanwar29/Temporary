@@ -63,9 +63,9 @@ exports.createResume = async(req,res) => {
             passport: passport,
             visa: visa,
             abroadExperience: abroadExperience,
-            blindSpotTraining: blindSpotTraining,
-            safeDrivingTraining: safeDrivingTraining,
-            fuelEconomyTraining: fuelEconomyTraining,
+            isblindSpotTraining: blindSpotTraining,
+            issafeDrivingTraining: safeDrivingTraining,
+            isfuelEconomyTraining: fuelEconomyTraining,
 
         })
         

@@ -229,5 +229,34 @@ exports.deleteService = async(req,res) => {
     }
 }
 
+exports.getInactiveServices = async (req, res) => {
+        try {
+    // Find all services with status 'inactive'
+    const inactiveServices = await Service.find({ status: 'Inactive' });
+
+
+        //validation
+        if(!inactiveServices) {
+            return res.staus(400).json({
+                success: false,
+                message:"Could not find the inactiveServices",
+            });
+        }
+
+      //return response
+        return res.status(200).json({
+            success:true,
+            message:"Inactive Services details fetched successfully",
+            data: inactiveServices,
+        });
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({
+            success:false,
+            message:error.message,
+        });
+    }
+}
+
 
 

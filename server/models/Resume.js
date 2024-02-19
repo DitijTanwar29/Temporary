@@ -35,7 +35,7 @@ const resumeSchema = new mongoose.Schema({
     },
     srcBox:{
         type: String,
-        enum:["SRC1","SRC2","SRC3","SRC4"],
+        // enum:["SRC1","SRC2","SRC3","SRC4"],
     },
     psikoteknik: {
         type: Date,

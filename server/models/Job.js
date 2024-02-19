@@ -63,6 +63,51 @@ const jobSchema = new mongoose.Schema({
     salaryType: {
         type: String,
         enum: ["Hourly","Weekly","Monthly","Yearly"],
+    },
+
+
+    //requirements for job creation 
+    // Main Certificates
+    licenseType: {
+        type: String,
+        enum:["Type 1","Type 2","Type 3"],
+    },
+    srcBox:{
+        type: String,
+        enum:["SRC1","SRC2","SRC3","SRC4"],
+    },
+    psikoteknik: {
+        type: Date,
+        default: Date.now(),
+    },
+    adrDrivingLicence:{
+        type: Date,
+        default: Date.now(),
+    },
+
+    // Abilities
+    passport: {
+        type: String,
+        enum:["Type 1","Type 2","Type 3"], 
+    },
+    visa: {
+        type: String,
+        enum: ["Type 1","Type 2","Type 3"],
+    },
+    abroadExperience: {
+        type: Number,
+    },
+    isBlindSpotTraining: {
+        type: Boolean,
+        default: false,
+    },
+    isSafeDrivingTraining: {
+        type: Boolean,
+        default: false,
+    },
+    isFuelEconomyTraining: {
+        type: Boolean,
+        default: false,
     }
 
 });
